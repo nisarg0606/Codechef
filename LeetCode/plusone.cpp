@@ -21,8 +21,14 @@ public:
 
 int main() {
     Solution s;
-    vector<int> digits = {1, 2, 3};
+    vector<int> digits = {1, 2, 34};
     vector<int> result = s.plusOne(digits);
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i] << " ";
+    }
+    cout << endl;
+    digits = {9, 9, 9, 9, 9, 9, 9, 9, 9, 9};
+    result = s.plusOne(digits);
     for (int i = 0; i < result.size(); i++) {
         cout << result[i] << " ";
     }
