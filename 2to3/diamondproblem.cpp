@@ -3,15 +3,15 @@ using namespace std;
 class Person
 {
 public:
-    Person(int x)
+    Person(int x)//parametirized constructor
     {
         cout << "Person constructor called" << endl;
     }
-    Person()
+    Person()//default constructor
     {
         cout << "Default constructor of Person" << endl;
     }
-    ~Person()
+    ~Person()//destructor
     {
         cout << "Person destructor called" << endl;
     }
@@ -30,7 +30,7 @@ public:
     }
     ~Faculty()
     {
-        cout << "Faculty destructor called" << endl;
+        cout<<"Faculty Destructor Called"<<endl;
     }
 };
 
@@ -47,7 +47,7 @@ public:
     }
     ~Student()
     {
-        cout << "Student destructor called" << endl;
+        cout<<"Student Destructor Called"<<endl;
     }
 };
 
@@ -64,13 +64,13 @@ public:
     }
     ~TA()
     {
-        cout << "TA destructor called" << endl;
+        cout<<"TA Destructor Called"<<endl;
     }
 };
 
 int main()
 {
-    TA ta1(20);
-    // TA ta;
+    // TA ta1(20);
+    TA ta;
     return 0;
 }
