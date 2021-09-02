@@ -8,3 +8,8 @@ int main()
     printf("The ascii value of the character %c you entered is %d",c,c);
     return 0;
 }
+
+/*
+    s[i] >= 65 && s[i] <= 90
+      s[i]  = s[i] + 32
+*/
