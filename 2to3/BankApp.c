@@ -15,7 +15,7 @@ int main()
     int ch, accno;
     while (1)
     {
-        printf("\nMain Menu");
+        printf("\n\nMain Menu");
         printf("\n1. Create Account: ");
         printf("\n2. Deposit: ");
         printf("\n3. Withdraw: ");
@@ -89,15 +89,47 @@ void createAccount(int accno)
 
 void deposit(int accno)
 {
-
+    FILE *fp;
+    float amount;
+    printf("\nEnter Amount: ");
+    scanf("%f", &amount);
+    fp = fopen("BankApp.dat", "r+");
+    fseek(fp, 0, SEEK_SET);
+    fprintf(fp, "%d %f\n", accno, amount);
+    fclose(fp);
 }
 
 void withdraw(int accno){
-
+    FILE *fp;
+    float amount;
+    printf("\nEnter Amount: ");
+    scanf("%f", &amount);
+    fp = fopen("BankApp.dat", "r+");
+    fseek(fp, 0, SEEK_SET);
+    fprintf(fp, "%d %f\n", accno, -amount);
+    fclose(fp);
 }
+
 void display(int accno){
-
+    FILE *fp;
+    int ac;
+    char name[20], address[20], phone[20];
+    fp = fopen("BankApp.dat", "r");
+    fseek(fp, 0, SEEK_SET);
+    while (fscanf(fp, "%d %s %s %s\n", &ac, name, address, phone) != EOF)
+    {
+        if (ac == accno)
+        {
+            printf("\nAccount Number: %d", accno);
+            printf("\nName: %s", name);
+            printf("\nAddress: %s", address);
+            printf("\nPhone Number: %s", phone);
+            break;
+        }
+    }
+    fclose(fp);
 }
+
 void modify(int accno){
 
 }
