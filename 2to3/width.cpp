@@ -9,8 +9,10 @@ int main()
     cout<<"*";
     cout.width(10);/*set width of the field*/ 
     cout<<"COST";
-    cout.width(10);
+    cout.width(7);
     // cout.width(5);/*set width of the field*/ 
+    cout<<" = ";
+    cout.width(10);
     cout<<"TOTAL"<<endl;
     int i, sum =0 ;
     for(i = 0; i < 4; i++)
@@ -18,7 +20,7 @@ int main()
         cout<<item[i];
         cout.width(18);/*set width of the field*/
         cout<<cost[i];
-        cout.width(10);/*set width of the field*/
+        cout.width(17);/*set width of the field*/
         cout<<item[i]*cost[i]<<endl;
         sum = sum + (item[i]*cost[i]);
     }
