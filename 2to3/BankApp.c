@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void createAccount(int);
+void createAccount(int); //prototypes
 void deposit(int);
 void withdraw(int);
 void display(int);
@@ -76,6 +76,7 @@ void createAccount(int accno)
 {
     FILE *fp;
     char name[20], address[20], phone[20];
+    float balance = 0;
     printf("\nEnter Name: ");
     scanf("%s", name);
     printf("\nEnter Address: ");
@@ -83,40 +84,70 @@ void createAccount(int accno)
     printf("\nEnter Phone Number: ");
     scanf("%s", phone);
     fp = fopen("BankApp.dat", "a");
-    fprintf(fp, "%d %s %s %s\n", accno, name, address, phone);
+    fprintf(fp, "%d %s %s %s %f\n", accno, name, address, phone, balance);
     fclose(fp);
 }
 
 void deposit(int accno)
 {
     FILE *fp;
-    float amount;
+    int ac;
+    char name[20], address[20], phone[20];
+    float amount, balance;
     printf("\nEnter Amount: ");
     scanf("%f", &amount);
     fp = fopen("BankApp.dat", "r+");
     fseek(fp, 0, SEEK_SET);
-    fprintf(fp, "%d %f\n", accno, amount);
+    while(fscanf(fp, "%d %s %s %s %f\n", &ac, name, address, phone, &balance) != EOF)
+    {
+        if (ac == accno)
+        {
+            fprintf(fp, "%d %s %s %s %f\n", accno, name, address, phone, amount + balance);
+            fclose(fp);
+            printf("\nDeposit Successful");
+            break;
+        }
+    }
     fclose(fp);
 }
 
 void withdraw(int accno){
     FILE *fp;
-    float amount;
+    float amount, amountbal;
+    int ac;
+    char name[20], address[20], phone[20];
     printf("\nEnter Amount: ");
     scanf("%f", &amount);
     fp = fopen("BankApp.dat", "r+");
     fseek(fp, 0, SEEK_SET);
-    fprintf(fp, "%d %f\n", accno, -amount);
-    fclose(fp);
+    while(fscanf(fp, "%d %s %s %s %f\n", &ac, name, address, phone, &amountbal) != EOF)
+    {
+        if (ac == accno)
+        {
+            if (amountbal >= amount)
+            {
+                fprintf(fp, "%d %s %s %s %f\n", accno, name, address, phone, amountbal - amount);
+                fclose(fp);
+                printf("\nWithdraw Successful");
+                break;
+            }
+            else
+            {
+                printf("\nInsufficient Balance");
+                break;
+            }
+        }
+    }
 }
 
 void display(int accno){
     FILE *fp;
     int ac;
     char name[20], address[20], phone[20];
+    float balance;
     fp = fopen("BankApp.dat", "r");
     fseek(fp, 0, SEEK_SET);
-    while (fscanf(fp, "%d %s %s %s\n", &ac, name, address, phone) != EOF)
+    while (fscanf(fp, "%d %s %s %s %f\n", &ac, name, address, phone, &balance) != EOF)
     {
         if (ac == accno)
         {
@@ -124,6 +155,7 @@ void display(int accno){
             printf("\nName: %s", name);
             printf("\nAddress: %s", address);
             printf("\nPhone Number: %s", phone);
+            printf("\nBalance: %f", balance);
             break;
         }
     }
