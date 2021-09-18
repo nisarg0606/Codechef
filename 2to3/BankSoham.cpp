@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Bank
+class Bank//class
 {
     int acno;
     char name[50];
@@ -120,7 +120,7 @@ int main()
             if (!found)
                 cout << "Record Not found" << endl;
             break;
-        case 4:
+        case 4:///withdraw
             cout << "Enter Account Number you want to Withdraw? ";
             cin >> a;
             for (i = 0; i <= 2; i++)
