@@ -2,7 +2,8 @@
 using namespace std;
 
 // class
-class Bank {
+class Bank
+{
 private:
     int acno;
     char name[50];
@@ -46,7 +47,8 @@ public:
 
 int Bank::Search(int a)
 {
-    if (acno == a) {
+    if (acno == a)
+    {
         ShowAccount();
         return (1);
     }
@@ -59,11 +61,13 @@ int main()
     Bank C[3];
 
     int found = 0, a, ch, i;
-    for (i = 0; i <= 2; i++) {
+    for (i = 0; i <= 2; i++)
+    {
         C[i].OpenAccount();
     }
 
-    do {
+    do
+    {
         // display options
         cout << "\n\n1:Display All\n2:By Account No\n3:Deposit\n4:Withdraw\n5:Exit" << endl;
 
@@ -71,16 +75,19 @@ int main()
         cout << "Please input your choice: ";
         cin >> ch;
 
-        switch (ch) {
+        switch (ch)
+        {
         case 1: // displating account info
-            for (i = 0; i <= 2; i++) {
+            for (i = 0; i <= 2; i++)
+            {
                 C[i].ShowAccount();
             }
             break;
         case 2: // searching the record
             cout << "Account Number? ";
             cin >> a;
-            for (i = 0; i <= 2; i++) {
+            for (i = 0; i <= 2; i++)
+            {
                 found = C[i].Search(a);
                 if (found)
                     break;
@@ -91,9 +98,11 @@ int main()
         case 3: // deposit operation
             cout << "Account Number To Deposit Amount? ";
             cin >> a;
-            for (i = 0; i <= 2; i++) {
+            for (i = 0; i <= 2; i++)
+            {
                 found = C[i].Search(a);
-                if (found) {
+                if (found)
+                {
                     C[i].Deposit();
                     break;
                 }
@@ -104,9 +113,11 @@ int main()
         case 4: // withdraw operation
             cout << "Account Number To Withdraw Amount? ";
             cin >> a;
-            for (i = 0; i <= 2; i++) {
+            for (i = 0; i <= 2; i++)
+            {
                 found = C[i].Search(a);
-                if (found) {
+                if (found)
+                {
                     C[i].Withdrawal();
                     break;
                 }

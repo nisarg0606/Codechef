@@ -30,6 +30,7 @@ int main()
 //     // float pi = 3.14159265358979323846264338327950288419716939937510;
 //     float pi = 22.0/7.0;
 //     cout<<"Value of PI:"<<endl;
+//     // printf("Value of PI is %1.2f", pi);
 //     for(int n = 1; n <= 10; n++)
 //     {
 //         cout.precision(n);
