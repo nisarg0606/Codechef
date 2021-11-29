@@ -2,4 +2,4 @@
 # 2to3/
 LeetCode/
 *.exe
-.vscode/
+.vscode/c_cpp_properties.json

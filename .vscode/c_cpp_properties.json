@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 // "E:/MinGW/lib/gcc/mingw32/9.2.0/include/c++"
-                "C:\\msys64\\mingw64\\bin"
+                "D:\\Programs\\msys64\\mingw64\\bin"
             ],
             "defines": [
                 "_DEBUG",
@@ -13,7 +13,7 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.19041.0",
-            "compilerPath": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "compilerPath": "D:\\Programs\\msys64\\mingw64\\bin\\g++.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-gcc-x64"
