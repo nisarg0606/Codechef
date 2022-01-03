@@ -20,12 +20,31 @@ class Dog:public Animal
     }
 };
 
+class Cat:public Animal
+{
+    public:
+    void speak()
+    {
+        cout<<"Cat Speaking"<<endl;
+    }
+};
+
 int main()
 {
-    Animal *a=new Animal();
-    Animal an;
+    // Animal *a=new Animal();
+    // Animal an;
+    // a->speak();
+    // Dog *d=new Dog();
+    // d->speak();
+    //Run Time Polymorphism
+    Animal *a;
+    // a = new Cat();
+    Cat c;
+    a = &c;
     a->speak();
-    Dog *d=new Dog();
-    d->speak();
+    Dog d;
+    // a = &d;
+    a = new Dog();
+    a->speak();
     return 0;
 }
