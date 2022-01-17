@@ -9,7 +9,7 @@ class Employee
     float salary;
 
 public:
-    Employee(int idpara, string namepara, float salarypara)
+    Employee(int idpara, string namepara, float salarypara) // parameterized constructor
     {
         id = idpara;
         name = namepara;
@@ -26,7 +26,7 @@ public:
 class Add
 {
 public:
-    Add()
+    Add()//default constructor
     {
         cout << "Add constructor called" << endl;
     }
