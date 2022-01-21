@@ -17,3 +17,6 @@ int main()
             goto ineligible;//goto label
         }
 }
+
+// 3 subjects marks
+// if any marks is less than 33 then print "fail" and goto start
