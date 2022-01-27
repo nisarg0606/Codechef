@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//c++ interface can be implemented using abstract classes and interfaces.
 #define ll long long int
 class Student{
     protected:
