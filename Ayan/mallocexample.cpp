@@ -17,6 +17,7 @@ int main()
     {
         cout << "The value of ptr is: " << *(ptr + i) << endl;
     }
-    free(ptr); // free the memory
+    free(ptr); // free the memory //destory the pointer
+    cout<<ptr;
     return 0;
 }
