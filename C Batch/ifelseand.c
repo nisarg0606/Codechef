@@ -33,7 +33,7 @@ int main()
 }
 
 /* Hotel Bill managment
-    if bill >= 500 20% discont
+    if bill >= 500 20% discount
     if bill >=400 and less than 500 15% discount
     if bill >=300 and less than 400 10% discount
     else bill <300 no discount
