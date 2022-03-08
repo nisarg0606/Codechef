@@ -12,6 +12,20 @@ public:
         size = 0;
         dynamicArray = NULL;
     }
+    ~DynamicArrayAllocationAndDeletion()
+    {
+        delete[] dynamicArray;
+        cout << "Destructor called and memory is freed" << endl;
+    }
+    DynamicArrayAllocationAndDeletion(const DynamicArrayAllocationAndDeletion &obj)
+    {
+        size = obj.size;
+        dynamicArray = new string[size];
+        for (int i = 0; i < size; i++)
+        {
+            dynamicArray[i] = obj.dynamicArray[i];
+        }
+    }
     string *addEntry(string newEntry)
     {
         if (size == 0)
@@ -73,11 +87,15 @@ public:
         }
         return dynamicArray;
     }
+    int getSize()
+    {
+        return size;
+    }
     void printArray()
     {
         for (int i = 0; i < size; i++)
         {
-            cout << dynamicArray[i] << endl;
+            cout << i << " --> " << dynamicArray[i] << endl;
         }
     }
 };
@@ -92,10 +110,16 @@ int main()
     dynamicArray = d.addEntry("Suresh");
     dynamicArray = d.addEntry("Rajesh");
     dynamicArray = d.addEntry("Rakesh");
+    cout << "Size of the array is " << d.getSize() << endl;
+    d.printArray();
+    dynamicArray = d.deleteEntry("Rakesh");
+    cout << "Size of the array is " << d.getSize() << endl;
     d.printArray();
     dynamicArray = d.deleteEntry("Rakesh");
     d.printArray();
-    dynamicArray = d.deleteEntry("Rakesh");
+    cout << "Size of the array is " << d.getSize() << endl;
     d.printArray();
     dynamicArray = d.deleteEntry("Suresh");
+    cout << "Size of the array is " << d.getSize() << endl;
+    d.printArray();
 }
