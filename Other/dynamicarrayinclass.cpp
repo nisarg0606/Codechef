@@ -122,4 +122,37 @@ int main()
     dynamicArray = d.deleteEntry("Suresh");
     cout << "Size of the array is " << d.getSize() << endl;
     d.printArray();
+    int choice = 1;
+    while (choice)
+    {
+        cout << "Enter 1 for addEntry" << endl;
+        cout << "2 for deleteEntry" << endl;
+        cout << "0 for exit" << endl;
+        cin >> choice;
+        string Entry;
+        if (choice == 1)
+        {
+            cout << "Enter the entry to be added" << endl;
+            cin >> Entry;
+            dynamicArray = d.addEntry(Entry);
+            cout << "Size of the array is " << d.getSize() << endl;
+            d.printArray();
+        }
+        else if (choice == 2)
+        {
+            cout << "Enter the entry to be deleted" << endl;
+            cin >> Entry;
+            dynamicArray = d.deleteEntry(Entry);
+            cout << "Size of the array is " << d.getSize() << endl;
+            d.printArray();
+        }
+        else if (choice == 0)
+        {
+            cout << "Exiting the program" << endl;
+        }
+        else
+        {
+            cout << "Invalid choice" << endl;
+        }
+    }
 }
