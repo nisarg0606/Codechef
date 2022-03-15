@@ -40,4 +40,13 @@ int main()
     printf("\nless Than demo ( < ) %d", a < b);
     printf("\nGreater Than Equals to demo ( >= ) %d", a >= b);
     printf("\nLess Than Equals to demo ( <= ) %d", a <= b);
+
+
+
+    /*
+    Logical Operators:
+        && (AND) ----> 
+        || (OR)
+        !  (NOT)
+    */
 }

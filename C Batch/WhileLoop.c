@@ -1,7 +1,3 @@
-// #include<stdio.h>
-
-// int main()
-// {
 /*
     1 to 10
     printf("1");
@@ -15,14 +11,6 @@
 
     while loop              do.... while loop           for loop
 */
-//    int i = 0;
-//     while(i <= 10)
-//     {
-//         printf(i);
-//     }
-//     return 0;
-// }
-
 #include <stdio.h>
 
 int main()
