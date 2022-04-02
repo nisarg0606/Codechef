@@ -31,5 +31,6 @@ int main()
     printf("\nTotal even numbers you entered are: %d", evencount);
     printf("\nTotal odd numbers you entered are: %d", oddcount);
 
+
     return 0;
 }

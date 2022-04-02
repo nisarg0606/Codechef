@@ -12,7 +12,7 @@ int main()
     printf("\n-             ----             For Substraction");
     printf("\n*             ----             For Multiplication");
     printf("\n/             ----             For Division");
-    printf("\nModuloSign(%) ----             For Modulo\n");
+    printf("\n%%            ----             For Modulo\n");
     fflush(stdin);
     scanf("%c", &choice);
     switch (choice)
