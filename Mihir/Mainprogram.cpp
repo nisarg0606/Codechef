@@ -2,8 +2,10 @@
 #include <iostream>
 #include "hourlyemployee.h"
 #include "salariedemployee.h"
-using std::cout;
-using std::endl;
+#include "employee.h"
+// using std::cout;
+// using std::endl;
+using namespace std;
 using namespace employeessavitch;
 
 int main()

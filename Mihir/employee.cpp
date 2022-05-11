@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "Employee.h"
+#include "employee.h"
 
 using namespace std;
 

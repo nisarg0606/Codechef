@@ -2,7 +2,7 @@
 // This is the header file hourlyemployee.h.
 // This is the interface for the class HourlyEmployee.
 
-//#ifndef HOURLYEMPLOYEE_H
+#ifndef HOURLYEMPLOYEE_H
 #define HOURLYEMPLOYEE_H
 
 #include <string>
@@ -33,3 +33,4 @@ namespace employeessavitch
     };
 
 }
+#endif

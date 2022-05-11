@@ -32,16 +32,6 @@ namespace employeessavitch
     }
     void SalariedEmployee::print_check()
     {
-
-        set_net_pay(salary);
-        cout << "\n__________________\n";
-        cout << "Pay to the order of " << get_name() << endl;
-        cout << "The sum of " << get_net_pay() << " Dollars\n";
-        cout << "_________________\n";
-        cout << "Check Stub NOT NEGOTIABLE \n";
-    }
-    void SalariedEmployee::print_check()
-    {
         set_net_pay(salary);
         cout << "\n__________________\n";
         cout << "Pay to the order of " << get_name() << endl;
