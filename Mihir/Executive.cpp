@@ -30,6 +30,7 @@ namespace storekosscomembership
 
     double Executive ::PointsReedem(int points)
     {
+        finalPoints = finalPoints - points;
         return (.01) * points;
     }
 

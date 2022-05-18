@@ -30,6 +30,7 @@ namespace storekosscomembership
 
     double GoldStar ::PointsReedem(int points)
     {
+        finalPoints = finalPoints - points;
         return (.01) * points;
     }
 
