@@ -5,20 +5,45 @@ using namespace std;
 #include "GoldStar.h"
 using namespace storekosscomembership;
 
+template <class T>
+class Tester
+{
+public:
+    T x;
+    Tester()
+    {
+        cout << "Tester constructor called.\n";
+    }
+};
 int main()
 {
+    Tester<int> t;
     while (true)
     {
     NewMember:
-        StoreKossCoMembership *p = new GoldStar();
+        StoreKossCoMembership *p = new StoreKossCoMembership();
         string name;
         p->welcomeMessage();
         cout << "Please enter your name: ";
         cin >> name;
         p->set_name(name);
         int age;
+    AgeCheck:
         cout << "Please enter your age: ";
-        cin >> age;
+        try
+        {
+            cin >> age;
+            if (age < 0 || age > 120)
+            {
+                throw age;
+            }
+        }
+        catch (int age)
+        {
+            cout << "ERROR: Invalid input for age.\n";
+            fflush(stdin);
+            goto AgeCheck;
+        }
         p->set_age(age);
         cout << "Please enter the type of membership you want 1 for Executive and 2 for GoldStar: ";
         int type;
@@ -41,16 +66,44 @@ int main()
                 cin >> choice;
                 if (choice == 1)
                 {
+                CostCheckExecPur:
                     cout << "Enter your purchase cost: ";
                     double cost;
-                    cin >> cost;
+                    try
+                    {
+                        cin >> cost;
+                        if (cost < 0)
+                        {
+                            throw cost;
+                        }
+                    }
+                    catch (double cost)
+                    {
+                        cout << "ERROR: Invalid input for cost.\n";
+                        cost = 0;
+                        goto CostCheckExecPur;
+                    }
                     p1->PointsCalculator(cost, "purchase");
                 }
                 else if (choice == 2)
                 {
+                CostCheckExecRet:
                     cout << "Enter your return cost: ";
                     double cost;
-                    cin >> cost;
+                    try
+                    {
+                        cin >> cost;
+                        if (cost < 0)
+                        {
+                            throw cost;
+                        }
+                    }
+                    catch (double cost)
+                    {
+                        cout << "ERROR: Invalid input for cost.\n";
+                        cost = 0;
+                        goto CostCheckExecRet;
+                    }
                     p1->PointsCalculator(cost, "return");
                 }
                 else if (choice == 3)
@@ -99,16 +152,44 @@ int main()
                 cin >> choice;
                 if (choice == 1)
                 {
+                CostCheckGoldPur:
                     cout << "Enter your purchase cost: ";
                     double cost;
-                    cin >> cost;
+                    try
+                    {
+                        cin >> cost;
+                        if (cost < 0)
+                        {
+                            throw cost;
+                        }
+                    }
+                    catch (double cost)
+                    {
+                        cout << "ERROR: Invalid input for cost.\n";
+                        cost = 0;
+                        goto CostCheckGoldPur;
+                    }
                     p1->PointsCalculator(cost, "purchase");
                 }
                 else if (choice == 2)
                 {
+                CostCheckGoldRet:
                     cout << "Enter your return cost: ";
                     double cost;
-                    cin >> cost;
+                    try
+                    {
+                        cin >> cost;
+                        if (cost < 0)
+                        {
+                            throw cost;
+                        }
+                    }
+                    catch (double cost)
+                    {
+                        cout << "ERROR: Invalid input for cost.\n";
+                        cost = 0;
+                        goto CostCheckGoldRet;
+                    }
                     p1->PointsCalculator(cost, "return");
                 }
                 else if (choice == 3)
